@@ -1,3 +1,5 @@
+create_boundaries(16, 16, room_width, room_height, 32, 32);
+
 // Track the player's current room in the 3x3 grid
 current_room_x = 1;  // Start in the center (middle room)
 current_room_y = 1;

@@ -13,9 +13,16 @@ if (keyboard_check(vk_escape)) {
 	game_end();
 }
 
+//Apply Player Movement
 horizontal_speed = (key_right - key_left) * walk_speed;
 vertical_speed = (key_down - key_up) * walk_speed;
-//vertical_speed += player_gravity;
+
+if ((key_right or key_left) and (key_up or key_down)) {
+	var diagonal_speed = sqrt((horizontal_speed * horizontal_speed) + (vertical_speed * vertical_speed))
+	horizontal_speed = diagonal_speed;
+	vertical_speed = diagonal_speed;
+}
+
 
 // Function to check collision with any object in the array
 function check_collision_with_array(x_pos, y_pos) {
