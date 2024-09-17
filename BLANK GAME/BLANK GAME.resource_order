@@ -1,0 +1,11 @@
+{
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_door","order":1,"path":"objects/obj_door/obj_door.yy",},
+    {"name":"check_collision","order":2,"path":"scripts/check_collision/check_collision.yy",},
+    {"name":"create_boundaries","order":1,"path":"scripts/create_boundaries/create_boundaries.yy",},
+    {"name":"spr_door","order":3,"path":"sprites/spr_door/spr_door.yy",},
+    {"name":"spr_player","order":1,"path":"sprites/spr_player/spr_player.yy",},
+    {"name":"spr_room_boundary","order":2,"path":"sprites/spr_room_boundary/spr_room_boundary.yy",},
+  ],
+}
