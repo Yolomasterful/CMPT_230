@@ -1,1 +1,1 @@
-create_boundaries(16, 16, room_width, room_height);
+create_boundaries(8, 8, room_width, room_width);
