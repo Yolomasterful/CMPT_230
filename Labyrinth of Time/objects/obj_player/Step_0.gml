@@ -13,44 +13,34 @@ if (keyboard_check(vk_escape)) {
 	game_end();
 }
 
-show_debug_message("Player X: " + string(x) + " Y: " + string(y));
-
 //Apply Player Movement
 horizontal_speed = (key_right - key_left) * walk_speed;
 vertical_speed = (key_down - key_up) * walk_speed;
 
-/*
-if ((key_right or key_left) and (key_up or key_down)) {
-	horizontal_speed = horizontal_speed * 0.5;
-	vertical_speed = vertical_speed * 0.5;
+//Fix Diagonal Movement
+if ((key_right + key_left + key_up + key_down == 2) and (key_right + key_left != 2) and (key_up + key_down != 2)) {
+	horizontal_speed = horizontal_speed * 0.8;
+	vertical_speed = vertical_speed * 0.8;
 }
-*/
+else {show_debug_message(" ");}
 
 // Horizontal Movement and Boundary Check
-if (check_collision(x + horizontal_speed, y)) {
-    while (!check_collision(x + sign(horizontal_speed), y)) {
-        x += sign(horizontal_speed);
-    }
-    horizontal_speed = 0;
+if (check_collision(x + horizontal_speed, y, collision_objects)) {
+	while (!check_collision(x + sign(horizontal_speed), y, collision_objects)) {
+	    x += sign(horizontal_speed);
+	}
+	horizontal_speed = 0;
 }
 x += horizontal_speed;
 
 // Vertical Movement and Boundary Check
-if (check_collision(x, y + vertical_speed)) {
-    while (!check_collision(x, y + sign(vertical_speed))) {
-        y += sign(vertical_speed);
-    }
-    vertical_speed = 0;
+if (check_collision(x, y + vertical_speed, collision_objects)) {
+	while (!check_collision(x, y + sign(vertical_speed), collision_objects)) {
+	    y += sign(vertical_speed);
+	}
+	vertical_speed = 0;
 }
 y += vertical_speed;
 
-//Jump
-/*
-if ((current_jump_count) and (action_jump)) {
-	vertical_speed = jump_strength
-	current_jump_count -= 1;
-}
-else if ((current_jump_count != jump_count) and (check_collision(x, y + 1)) and (vertical_speed == 0)) {
-	current_jump_count = jump_count;
-}
-*/
+x = round(x);
+y = round(y);
