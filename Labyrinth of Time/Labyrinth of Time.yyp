@@ -49,7 +49,6 @@
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
     {"id":{"name":"check_collision","path":"scripts/check_collision/check_collision.yy",},},
     {"id":{"name":"create_boundaries","path":"scripts/create_boundaries/create_boundaries.yy",},},
-    {"id":{"name":"update_views","path":"scripts/update_views/update_views.yy",},},
     {"id":{"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_room_boundary","path":"sprites/spr_room_boundary/spr_room_boundary.yy",},},
