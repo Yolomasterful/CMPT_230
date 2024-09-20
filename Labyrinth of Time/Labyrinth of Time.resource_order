@@ -1,10 +1,11 @@
 {
   "FolderOrderSettings":[
+    {"name":"Title Screen","order":2,"path":"folders/Objects/Title Screen.yy",},
     {"name":"Title Screen","order":4,"path":"folders/Sprites/Title Screen.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"fnt_dialogue","order":1,"path":"fonts/fnt_dialogue/fnt_dialogue.yy",},
     {"name":"obj_door","order":1,"path":"objects/obj_door/obj_door.yy",},
-    {"name":"obj_title_screen","order":2,"path":"objects/obj_title_screen/obj_title_screen.yy",},
     {"name":"rm_title_screen","order":1,"path":"rooms/rm_title_screen/rm_title_screen.yy",},
     {"name":"Room2","order":1,"path":"rooms/Room2/Room2.yy",},
     {"name":"check_collision","order":2,"path":"scripts/check_collision/check_collision.yy",},
