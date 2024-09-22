@@ -1,0 +1,67 @@
+draw_set_color(c_white);
+draw_set_font(fnt_dialogue);
+draw_set_halign(fa_left);
+
+//Postions
+var x_align = -120;
+var y_align = 2;
+var bar_length = 100;
+var bar_width = 6
+//Bars
+if (stamina_delay > 0) {
+	draw_set_color(c_grey);
+	draw_rectangle(x_align, y_align+bar_width, x_align + bar_length * abs(stamina_delay / default_stamina_delay), y_align+bar_width/2+bar_width, false);
+}
+if (stamina > 0) {
+	draw_set_color(c_aqua);
+	draw_rectangle(x_align, y_align, x_align + bar_length * abs(stamina / default_stamina), y_align+bar_width, false);
+}
+y_align += bar_width/2+bar_width;
+if (dodge_timer > 0) {
+	draw_set_color(c_lime);
+	draw_rectangle(x_align, y_align, x_align + bar_length * abs(dodge_timer / default_dodge_timer), y_align+bar_width, false);
+}
+y_align += bar_width+2;
+//Direction
+
+if (global.key_up and global.key_left) {
+	draw_set_color(c_orange);
+	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+}
+x_align += bar_width;
+if (global.key_up) {
+	draw_set_color(c_red);
+	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+}
+x_align += bar_width
+if (global.key_right and global.key_up) {
+	draw_set_color(c_orange);
+	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+}
+x_align -= bar_width*2
+y_align += bar_width
+if (global.key_left) {
+	draw_set_color(c_red);
+	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+}
+x_align += bar_width*2
+if (global.key_right) {
+	draw_set_color(c_red);
+	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+}
+x_align -= bar_width*2
+y_align += bar_width
+if (global.key_left and global.key_down) {
+	draw_set_color(c_orange);
+	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+}
+x_align += bar_width;
+if (global.key_down) {
+	draw_set_color(c_red);
+	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+}
+x_align += bar_width;
+if (global.key_down and global.key_right) {
+	draw_set_color(c_orange);
+	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+}
