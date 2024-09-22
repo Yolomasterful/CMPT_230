@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_player",
   "bboxMode":0,
-  "bbox_bottom":7,
+  "bbox_bottom":15,
   "bbox_left":0,
-  "bbox_right":7,
+  "bbox_right":15,
   "bbox_top":0,
   "collisionKind":0,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":8,
+  "height":16,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"629c9d13-e1b6-4542-8b21-1797526b9c4a","blendMode":0,"displayName":"default","isLocked":false,"name":"629c9d13-e1b6-4542-8b21-1797526b9c4a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":8,
+  "width":16,
 }

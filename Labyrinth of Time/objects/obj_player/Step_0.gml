@@ -17,27 +17,31 @@ if (keyboard_check(vk_escape)) {
 }
 
 //Sprint
-if (stamina > 0 && !exhausted) {
-    if (action_sprint) {
+if (stamina > 0 and not exhausted) {
+    if (action_sprint and ((horizontal_speed != 0) or (vertical_speed != 0))) {
         walk_speed = default_walk_speed * 2;  // Sprinting speed
-        stamina = max(stamina - 1, 0);  // Decrease stamina, but don't go below 0
+        stamina = max(stamina - 4, 0);  // Decrease stamina, but don't go below 0
 
         if (stamina == 0) {
             exhausted = true;  // Prevent sprinting when stamina reaches 0
         }
     } else {
         walk_speed = default_walk_speed;  // Regular speed when not sprinting
-        stamina = min(stamina + 0.5, max_stamina);  // Regenerate stamina
+        stamina = min(stamina + 2, max_stamina);  // Regenerate stamina
     }
 } else {
     walk_speed = default_walk_speed;  // Normal walking speed
-    stamina = min(stamina + 0.25, max_stamina);  // Regenerate stamina when not sprinting
+    stamina = min(stamina + 1, max_stamina);  // Regenerate stamina when not sprinting
 
     if (stamina >= max_stamina) {
         exhausted = false;  // Allow sprinting again once fully recharged
     }
 }
 
+//Dodge
+if (stamina > 50) {
+
+}
 
 //Apply Player Movement
 horizontal_speed = (key_right - key_left) * walk_speed;
