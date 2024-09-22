@@ -1,21 +1,29 @@
-vertical_speed = 0;
-horizontal_speed = 0;
-
-default_walk_speed = 2;
-walk_speed = default_walk_speed;
-
-collision_objects = [obj_room_boundary, obj_wall]
-
+//Controller
 gamepad_number = 0;
 gamepad_deadzone = 0.3;
-
-max_stamina = 100;
+//Movement
+vertical_speed = 0;
+horizontal_speed = 0;
+diagonal_scaler = 0.75;
+last_facing = direction;
+//Walk Speed
+default_walk_speed = 2;
+walk_speed = default_walk_speed;
+//Stamina
+default_stamina = 100;
+stamina = default_stamina;
+default_stamina_delay = 4 * 60;
+stamina_delay = 0;
+stamina_delay_increment = 3;
 exhausted = false;
-stamina = max_stamina;
-
-/*
-/player_gravity = 0.5;
-
-jump_count = 2;
-current_jump_count = jump_count;
-jump_strength = -10;
+//Sprint
+sprint_speed = default_walk_speed * 2;
+//Dodge
+dodge_speed = default_walk_speed * 2;
+default_dodge_timer = 1.2 * 60 / dodge_speed;
+dodge_timer = default_dodge_timer;
+dodging = false;
+//Collision Object List
+collision_objects = [obj_room_boundary, obj_wall]
+//Boolean Stats
+invulnerable = false;

@@ -1,1 +1,0 @@
-create_boundaries(8, 8, room_width, room_height);

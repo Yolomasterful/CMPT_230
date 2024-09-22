@@ -1,13 +1,20 @@
 {
   "FolderOrderSettings":[
+    {"name":"Title Screen","order":3,"path":"folders/Fonts/Title Screen.yy",},
     {"name":"Title Screen","order":2,"path":"folders/Objects/Title Screen.yy",},
-    {"name":"Title Screen","order":4,"path":"folders/Sprites/Title Screen.yy",},
+    {"name":"Traps","order":3,"path":"folders/Objects/Traps.yy",},
+    {"name":"Floor 1","order":1,"path":"folders/Objects/Traps/Floor 1.yy",},
+    {"name":"Traps","order":5,"path":"folders/Sprites/Traps.yy",},
+    {"name":"Floor 1","order":1,"path":"folders/Sprites/Traps/Floor 1.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"fnt_dialogue","order":1,"path":"fonts/fnt_dialogue/fnt_dialogue.yy",},
+    {"name":"fnt_title_screen_large","order":3,"path":"fonts/fnt_title_screen_large/fnt_title_screen_large.yy",},
+    {"name":"fnt_title_screen_medium","order":1,"path":"fonts/fnt_title_screen_medium/fnt_title_screen_medium.yy",},
+    {"name":"fnt_title_screen_small","order":2,"path":"fonts/fnt_title_screen_small/fnt_title_screen_small.yy",},
     {"name":"obj_door","order":1,"path":"objects/obj_door/obj_door.yy",},
+    {"name":"rm_floor1_x1_y0","order":1,"path":"rooms/rm_floor1_x1_y0/rm_floor1_x1_y0.yy",},
     {"name":"rm_title_screen","order":1,"path":"rooms/rm_title_screen/rm_title_screen.yy",},
-    {"name":"Room2","order":1,"path":"rooms/Room2/Room2.yy",},
     {"name":"check_collision","order":2,"path":"scripts/check_collision/check_collision.yy",},
     {"name":"create_boundaries","order":1,"path":"scripts/create_boundaries/create_boundaries.yy",},
     {"name":"spr_door","order":3,"path":"sprites/spr_door/spr_door.yy",},
