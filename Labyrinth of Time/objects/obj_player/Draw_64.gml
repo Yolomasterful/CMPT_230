@@ -21,47 +21,65 @@ if (dodge_timer > 0) {
 	draw_set_color(c_lime);
 	draw_rectangle(x_align, y_align, x_align + bar_length * abs(dodge_timer / default_dodge_timer), y_align+bar_width, false);
 }
-y_align += bar_width+2;
+y_align += bar_width+3;
+
 //Direction
 
+var original_x = x_align;
+var original_y = y_align;
+
+// Row 1
 if (global.key_up and global.key_left) {
-	draw_set_color(c_orange);
-	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+    draw_set_color(c_orange);
+    draw_rectangle(x_align, y_align, x_align + bar_width, y_align + bar_width, false);
 }
-x_align += bar_width;
+x_align += bar_width + 1;
+
 if (global.key_up) {
-	draw_set_color(c_red);
-	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+    draw_set_color(c_red);
+    draw_rectangle(x_align, y_align, x_align + bar_width, y_align + bar_width, false);
 }
-x_align += bar_width
+x_align += bar_width + 1;
+
 if (global.key_right and global.key_up) {
-	draw_set_color(c_orange);
-	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+    draw_set_color(c_orange);
+    draw_rectangle(x_align, y_align, x_align + bar_width, y_align + bar_width, false);
 }
-x_align -= bar_width*2
-y_align += bar_width
+
+// Reset to start of row 2
+x_align = original_x;
+y_align += bar_width + 1;
+
+// Row 2
 if (global.key_left) {
-	draw_set_color(c_red);
-	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+    draw_set_color(c_red);
+    draw_rectangle(x_align, y_align, x_align + bar_width, y_align + bar_width, false);
 }
-x_align += bar_width*2
+x_align += (bar_width + 1) * 2;
+
 if (global.key_right) {
-	draw_set_color(c_red);
-	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+    draw_set_color(c_red);
+    draw_rectangle(x_align, y_align, x_align + bar_width, y_align + bar_width, false);
 }
-x_align -= bar_width*2
-y_align += bar_width
+
+// Reset to start of row 3
+x_align = original_x;
+y_align += bar_width + 1;
+
+// Row 3
 if (global.key_left and global.key_down) {
-	draw_set_color(c_orange);
-	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+    draw_set_color(c_orange);
+    draw_rectangle(x_align, y_align, x_align + bar_width, y_align + bar_width, false);
 }
-x_align += bar_width;
+x_align += bar_width + 1;
+
 if (global.key_down) {
-	draw_set_color(c_red);
-	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+    draw_set_color(c_red);
+    draw_rectangle(x_align, y_align, x_align + bar_width, y_align + bar_width, false);
 }
-x_align += bar_width;
+x_align += bar_width + 1;
+
 if (global.key_down and global.key_right) {
-	draw_set_color(c_orange);
-	draw_rectangle(x_align, y_align, x_align+bar_width, y_align+bar_width, false);
+    draw_set_color(c_orange);
+    draw_rectangle(x_align, y_align, x_align + bar_width, y_align + bar_width, false);
 }

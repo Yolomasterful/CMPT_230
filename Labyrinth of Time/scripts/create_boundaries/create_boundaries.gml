@@ -1,4 +1,4 @@
-function create_boundaries(spr_width, spr_height, rm_width, rm_height, x_pos = 0, y_pos = 0) {
+function create_boundaries(spr_width, spr_height, rm_width = room_width, rm_height = room_height, x_pos = 0, y_pos = 0) {
 	// Top boundary
     var top_boundary = instance_create_layer(x_pos, y_pos, "Instances", obj_room_boundary);
     top_boundary.image_xscale = (rm_width / spr_width) + 2;
