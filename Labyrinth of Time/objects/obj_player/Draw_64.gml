@@ -8,18 +8,23 @@ var y_align = 2;
 var bar_length = 100;
 var bar_width = 6
 //Bars
-if (stamina_delay > 0) {
+if (current_lives > 0) {
+	draw_set_color(c_red);
+	draw_rectangle(x_align, y_align, x_align + bar_length * abs(current_lives / default_lives), y_align+bar_width, false);
+}
+y_align += bar_width + 2;
+if (current_stamina_delay > 0) {
 	draw_set_color(c_grey);
-	draw_rectangle(x_align, y_align+bar_width, x_align + bar_length * abs(stamina_delay / default_stamina_delay), y_align+bar_width/2+bar_width, false);
+	draw_rectangle(x_align, y_align+bar_width+1, x_align + bar_length * abs(current_stamina_delay / default_stamina_delay), y_align+bar_width/2+bar_width, false);
 }
-if (stamina > 0) {
+if (current_stamina > 0) {
 	draw_set_color(c_aqua);
-	draw_rectangle(x_align, y_align, x_align + bar_length * abs(stamina / default_stamina), y_align+bar_width, false);
+	draw_rectangle(x_align, y_align, x_align + bar_length * abs(current_stamina / default_stamina), y_align+bar_width, false);
 }
-y_align += bar_width/2+bar_width;
-if (dodge_timer > 0) {
+y_align += bar_width/2+bar_width+1;
+if (current_dodge_timer > 0) {
 	draw_set_color(c_lime);
-	draw_rectangle(x_align, y_align, x_align + bar_length * abs(dodge_timer / default_dodge_timer), y_align+bar_width, false);
+	draw_rectangle(x_align, y_align, x_align + bar_length * abs(current_dodge_timer / default_dodge_timer), y_align+bar_width, false);
 }
 y_align += bar_width+3;
 
