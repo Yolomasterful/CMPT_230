@@ -2,8 +2,9 @@
   "$GMTileSet":"v1",
   "%Name":"ts_desert_floor",
   "autoTileSets":[
-    {"$GMAutoTileSet":"","%Name":"autotile_2","closed_edge":false,"name":"autotile_2","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[
-        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    {"$GMAutoTileSet":"","%Name":"Main","closed_edge":false,"name":"Main","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[
+        1,2,3,4,5,6,7,8,14,15,16,17,18,19,20,21,26,27,28,29,30,31,32,33,38,39,40,41,42,43,44,45,50,51,52,53,
+        54,55,56,57,62,63,64,65,66,67,68,
       ],},
   ],
   "macroPageTiles":{
@@ -13,7 +14,7 @@
     "TileDataFormat":1,
   },
   "name":"ts_desert_floor",
-  "out_columns":1,
+  "out_columns":12,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -39,5 +40,5 @@
   "tileWidth":32,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":2,
+  "tile_count":144,
 }

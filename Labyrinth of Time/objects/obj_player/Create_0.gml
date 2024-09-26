@@ -24,7 +24,7 @@ exhausted = false;
 sprint_speed = default_walk_speed * 2;
 //Dodge
 dodge_speed = default_walk_speed * 3;
-default_dodge_timer = 1.5 * 60 / dodge_speed;
+default_dodge_timer = 2 * 60 / dodge_speed;
 current_dodge_timer = default_dodge_timer;
 dodging = false;
 //Collision Object List

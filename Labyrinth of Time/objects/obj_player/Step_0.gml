@@ -141,13 +141,14 @@ if (dodging) {
 
 //Check Fallen
 var overlap_percent = check_tile_collision(x, y, "Flooring");
-if (overlap_percent >= 0.9) {
+if (overlap_percent >= 0.8) {
 	last_safe_coords = [x, y];
-} else if ((overlap_percent < 0.5) and not dodging) {
-	if ((last_safe_coords[0] != -1) and (last_safe_coords[-1] != -1)) {
-		x = last_safe_coords[0];
-		y = last_safe_coords[1];
+	if (dodging) {
+	
 	}
+} else if ((overlap_percent < 0.5) and not dodging) {
+	x = last_safe_coords[0];
+	y = last_safe_coords[1];
 }
 
 // Horizontal Movement and Boundary Check

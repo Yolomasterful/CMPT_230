@@ -12,7 +12,7 @@ if (current_lives > 0) {
 	draw_set_color(c_red);
 	draw_rectangle(x_align, y_align, x_align + bar_length * abs(current_lives / default_lives), y_align+bar_width, false);
 }
-y_align += bar_width + 2;
+y_align += bar_width + 3;
 if (current_stamina_delay > 0) {
 	draw_set_color(c_grey);
 	draw_rectangle(x_align, y_align+bar_width+1, x_align + bar_length * abs(current_stamina_delay / default_stamina_delay), y_align+bar_width/2+bar_width, false);
