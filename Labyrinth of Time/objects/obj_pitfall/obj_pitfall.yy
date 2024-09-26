@@ -6,8 +6,8 @@
   "name":"obj_pitfall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Floor 1",
-    "path":"folders/Objects/Traps/Floor 1.yy",
+    "name":"Dungeon",
+    "path":"folders/Objects/Traps/Dungeon.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,4 +1,4 @@
-function check_tile_collision(x_pos, y_pos, tile_layer_name, spr_width = sprite_width, spr_height = sprite_height){
+function check_tile_inside_collision(x_pos, y_pos, tile_layer_name, spr_width = sprite_width, spr_height = sprite_height){
 	var tilemap_layer_id = layer_tilemap_get_id(tile_layer_name);
 	
 	var polling = 2;

@@ -17,7 +17,7 @@ if (select) {
 	switch (selected_button) {
 		case 0:
 			//Play
-			room_goto(rm_floor1_start);
+			room_goto(rm_desert);
 			break;
 		case 1:
 			//Options

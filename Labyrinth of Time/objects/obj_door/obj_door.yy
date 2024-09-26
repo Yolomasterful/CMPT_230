@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_door",
-    "path":"sprites/spr_door/spr_door.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

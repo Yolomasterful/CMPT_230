@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_desert_floor",
   "bboxMode":0,
-  "bbox_bottom":319,
-  "bbox_left":32,
-  "bbox_right":319,
+  "bbox_bottom":191,
+  "bbox_left":0,
+  "bbox_right":287,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":32,
   "gridY":32,
-  "height":384,
+  "height":192,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"e2a4f9a3-42cd-47f8-a1c9-44df6bf15334","blendMode":0,"displayName":"default","isLocked":false,"name":"e2a4f9a3-42cd-47f8-a1c9-44df6bf15334","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":384,
+  "width":288,
 }

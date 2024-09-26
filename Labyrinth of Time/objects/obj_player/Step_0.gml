@@ -9,7 +9,12 @@ global.action_sprint = keyboard_check(vk_shift) or gamepad_button_check(gamepad_
 global.action_dodge = keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(gamepad_number, gp_face1);
 
 if keyboard_check_pressed(vk_f11) {
-	window_set_fullscreen(!window_get_fullscreen());
+	if (window_get_fullscreen()) {
+		window_set_fullscreen(false);
+		window_center();
+	} else {
+		window_set_fullscreen(true);
+	}
 }
 
 if (keyboard_check(vk_escape) or gamepad_button_check(gamepad_number, gp_select)) {
@@ -78,7 +83,7 @@ if (global.key_up and global.key_right) {
 if (current_stamina > 0 and not exhausted) {
     if (global.action_sprint and ((horizontal_speed != 0) or (vertical_speed != 0))) {
         walk_speed = sprint_speed;  // Sprinting speed
-        current_stamina = max(current_stamina - 4, 0);  // Decrease stamina, but don't go below 0
+        current_stamina = max(current_stamina - sprint_stamina_drain, 0);  // Decrease stamina, but don't go below 0
 		current_stamina_delay = default_stamina_delay;
         if (current_stamina == 0) {
             exhausted = true;  // Prevent sprinting when stamina reaches 0
@@ -91,9 +96,9 @@ if (current_stamina > 0 and not exhausted) {
 }
 
 //Dodge
-if (global.action_dodge and not dodging and not exhausted and current_stamina >= 50) {
+if (global.action_dodge and not dodging and not exhausted and current_stamina >= dodge_stamina_drain) {
     dodging = true;
-    current_stamina = max(current_stamina - 50, 0);  // Use 50 stamina, but don't go below 0
+    current_stamina = max(current_stamina - dodge_stamina_drain, 0);  // Use 50 stamina, but don't go below 0
 	current_stamina_delay = default_stamina_delay;
     if (current_stamina == 0) {
         exhausted = true;  // Prevent further dodging when stamina reaches 0
@@ -140,20 +145,18 @@ if (dodging) {
 }
 
 //Check Fallen
+/*
 var overlap_percent = check_tile_collision(x, y, "Flooring");
 if (overlap_percent >= 0.8) {
 	last_safe_coords = [x, y];
-	if (dodging) {
-	
-	}
 } else if ((overlap_percent < 0.5) and not dodging) {
 	x = last_safe_coords[0];
 	y = last_safe_coords[1];
-}
+}*/
 
 // Horizontal Movement and Boundary Check
-if (check_collision(x + horizontal_speed, y, collision_objects)) {
-	while (!check_collision(x + sign(horizontal_speed), y, collision_objects)) {
+if (place_meeting(x + horizontal_speed, y, collision_objects)) {
+	while (!place_meeting(x + sign(horizontal_speed), y, collision_objects)) {
 	    x += sign(horizontal_speed);
 	}
 	horizontal_speed = 0;
@@ -161,8 +164,8 @@ if (check_collision(x + horizontal_speed, y, collision_objects)) {
 x += horizontal_speed;
 
 // Vertical Movement and Boundary Check
-if (check_collision(x, y + vertical_speed, collision_objects)) {
-	while (!check_collision(x, y + sign(vertical_speed), collision_objects)) {
+if (place_meeting(x, y + vertical_speed, collision_objects)) {
+	while (!place_meeting(x, y + sign(vertical_speed), collision_objects)) {
 	    y += sign(vertical_speed);
 	}
 	vertical_speed = 0;

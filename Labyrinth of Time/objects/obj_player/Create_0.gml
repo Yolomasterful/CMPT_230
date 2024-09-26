@@ -21,13 +21,15 @@ current_stamina_delay = 0;
 stamina_delay_increment = 3;
 exhausted = false;
 //Sprint
+sprint_stamina_drain = 2;
 sprint_speed = default_walk_speed * 2;
 //Dodge
+dodge_stamina_drain = 25;
 dodge_speed = default_walk_speed * 3;
 default_dodge_timer = 2 * 60 / dodge_speed;
 current_dodge_timer = default_dodge_timer;
 dodging = false;
 //Collision Object List
-collision_objects = [obj_room_boundary, obj_wall]
+collision_objects = [obj_room_boundary, layer_tilemap_get_id("Walls")]
 //Boolean Stats
 invulnerable = false;
