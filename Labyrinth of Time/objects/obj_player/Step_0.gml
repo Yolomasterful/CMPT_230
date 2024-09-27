@@ -1,12 +1,13 @@
 //Keys
-global.key_right = keyboard_check(ord("D")) or keyboard_check(vk_right) or gamepad_button_check(gamepad_number, gp_padr) or  gamepad_axis_value(gamepad_number, gp_axislh) > gamepad_deadzone;
-global.key_left = keyboard_check(ord("A")) or keyboard_check(vk_left) or gamepad_button_check(gamepad_number, gp_padl) or gamepad_axis_value(gamepad_number, gp_axislh) < -gamepad_deadzone;
-global.key_up = keyboard_check(ord("W")) or keyboard_check(vk_up) or gamepad_button_check(gamepad_number, gp_padu) or gamepad_axis_value(gamepad_number, gp_axislv) < -gamepad_deadzone;
-global.key_down = keyboard_check(ord("S")) or keyboard_check(vk_down) or gamepad_button_check(gamepad_number, gp_padd) or gamepad_axis_value(gamepad_number, gp_axislv) > gamepad_deadzone;
+global.key_right = keyboard_check(ord("D")) or keyboard_check(vk_right) or gamepad_button_check(global.gamepad_number, gp_padr) or  gamepad_axis_value(global.gamepad_number, gp_axislh) > global.gamepad_deadzone;
+global.key_left = keyboard_check(ord("A")) or keyboard_check(vk_left) or gamepad_button_check(global.gamepad_number, gp_padl) or gamepad_axis_value(global.gamepad_number, gp_axislh) < -global.gamepad_deadzone;
+global.key_up = keyboard_check(ord("W")) or keyboard_check(vk_up) or gamepad_button_check(global.gamepad_number, gp_padu) or gamepad_axis_value(global.gamepad_number, gp_axislv) < -global.gamepad_deadzone;
+global.key_down = keyboard_check(ord("S")) or keyboard_check(vk_down) or gamepad_button_check(global.gamepad_number, gp_padd) or gamepad_axis_value(global.gamepad_number, gp_axislv) > global.gamepad_deadzone;
+
 //Actions
-global.action_interact = keyboard_check_pressed(ord("E")) or gamepad_button_check_pressed(gamepad_number, gp_face3);
-global.action_sprint = keyboard_check(vk_shift) or gamepad_button_check(gamepad_number, gp_shoulderl);// or gamepad_button_check(gamepad_number, gp_shoulderlb);
-global.action_dodge = keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(gamepad_number, gp_face1);
+global.action_interact = keyboard_check_pressed(ord("E")) or gamepad_button_check_pressed(global.gamepad_number, gp_face3);
+global.action_sprint = keyboard_check(vk_shift) or gamepad_button_check(global.gamepad_number, gp_shoulderl);// or gamepad_button_check(gamepad_number, gp_shoulderlb);
+global.action_dodge = keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(global.gamepad_number, gp_face1);
 
 if keyboard_check_pressed(vk_f11) {
 	if (window_get_fullscreen()) {
@@ -15,10 +16,6 @@ if keyboard_check_pressed(vk_f11) {
 	} else {
 		window_set_fullscreen(true);
 	}
-}
-
-if (keyboard_check(vk_escape) or gamepad_button_check(gamepad_number, gp_select)) {
-	game_end();
 }
 
 //Debug Movement

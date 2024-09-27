@@ -1,6 +1,6 @@
 //Controller
-gamepad_number = 0;
-gamepad_deadzone = 0.3;
+global.gamepad_number = 0;
+global.gamepad_deadzone = 0.3;
 //Movement
 vertical_speed = 0;
 horizontal_speed = 0;
