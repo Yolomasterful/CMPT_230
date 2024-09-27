@@ -11,8 +11,8 @@
   "name":"obj_pause",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Logic Handlers",
+    "path":"folders/Objects/Logic Handlers.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings":[
     {"name":"Title Screen","order":3,"path":"folders/Fonts/Title Screen.yy",},
+    {"name":"Logic Handlers","order":6,"path":"folders/Objects/Logic Handlers.yy",},
     {"name":"Traps","order":3,"path":"folders/Objects/Traps.yy",},
     {"name":"Desert","order":2,"path":"folders/Objects/Traps/Desert.yy",},
     {"name":"Dungeon","order":1,"path":"folders/Objects/Traps/Dungeon.yy",},
@@ -16,14 +17,14 @@
     {"name":"fnt_title_screen_large","order":3,"path":"fonts/fnt_title_screen_large/fnt_title_screen_large.yy",},
     {"name":"fnt_title_screen_medium","order":1,"path":"fonts/fnt_title_screen_medium/fnt_title_screen_medium.yy",},
     {"name":"fnt_title_screen_small","order":2,"path":"fonts/fnt_title_screen_small/fnt_title_screen_small.yy",},
-    {"name":"obj_pause","order":4,"path":"objects/obj_pause/obj_pause.yy",},
     {"name":"obj_player","order":1,"path":"objects/obj_player/obj_player.yy",},
-    {"name":"obj_title_screen_handler","order":5,"path":"objects/obj_title_screen_handler/obj_title_screen_handler.yy",},
+    {"name":"obj_title_screen_handler","order":1,"path":"objects/obj_title_screen_handler/obj_title_screen_handler.yy",},
     {"name":"rm_desert","order":2,"path":"rooms/rm_desert/rm_desert.yy",},
     {"name":"rm_title_screen","order":1,"path":"rooms/rm_title_screen/rm_title_screen.yy",},
     {"name":"check_tile_collision","order":3,"path":"scripts/check_tile_collision/check_tile_collision.yy",},
     {"name":"create_boundaries","order":1,"path":"scripts/create_boundaries/create_boundaries.yy",},
     {"name":"spr_player","order":1,"path":"sprites/spr_player/spr_player.yy",},
-    {"name":"spr_room_boundary","order":2,"path":"sprites/spr_room_boundary/spr_room_boundary.yy",},
+    {"name":"spr_room_boundary","order":9,"path":"sprites/spr_room_boundary/spr_room_boundary.yy",},
+    {"name":"ts_desert_wall","order":1,"path":"tilesets/ts_desert_wall/ts_desert_wall.yy",},
   ],
 }
