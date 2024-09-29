@@ -44,8 +44,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Dungeon",
-    "path":"folders/Sprites/Traps/Dungeon.yy",
+    "name":"Traps",
+    "path":"folders/Sprites/Tile Sets/Dungeon/Traps.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
