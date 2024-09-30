@@ -25,6 +25,8 @@
     {"name":"create_boundaries","order":1,"path":"scripts/create_boundaries/create_boundaries.yy",},
     {"name":"spr_pitfall","order":3,"path":"sprites/spr_pitfall/spr_pitfall.yy",},
     {"name":"spr_player","order":1,"path":"sprites/spr_player/spr_player.yy",},
+    {"name":"spr_quicksand_base","order":1,"path":"sprites/spr_quicksand_base/spr_quicksand_base.yy",},
+    {"name":"spr_quicksand","order":2,"path":"sprites/spr_quicksand/spr_quicksand.yy",},
     {"name":"spr_room_boundary","order":9,"path":"sprites/spr_room_boundary/spr_room_boundary.yy",},
     {"name":"ts_desert_wall","order":1,"path":"tilesets/ts_desert_wall/ts_desert_wall.yy",},
   ],

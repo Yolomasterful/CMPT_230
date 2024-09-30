@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_quicksand",
-    "path":"sprites/spr_quicksand/spr_quicksand.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

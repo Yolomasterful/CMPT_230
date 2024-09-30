@@ -64,6 +64,7 @@
     {"id":{"name":"spr_desert_floor","path":"sprites/spr_desert_floor/spr_desert_floor.yy",},},
     {"id":{"name":"spr_pitfall","path":"sprites/spr_pitfall/spr_pitfall.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
+    {"id":{"name":"spr_quicksand_base","path":"sprites/spr_quicksand_base/spr_quicksand_base.yy",},},
     {"id":{"name":"spr_quicksand","path":"sprites/spr_quicksand/spr_quicksand.yy",},},
     {"id":{"name":"spr_room_boundary","path":"sprites/spr_room_boundary/spr_room_boundary.yy",},},
     {"id":{"name":"ts_desert_floor","path":"tilesets/ts_desert_floor/ts_desert_floor.yy",},},
