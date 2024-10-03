@@ -1,6 +1,5 @@
 create_boundaries(32, 32);
 
-window_set_size(room_width+room_width*(1/4), room_height);
-window_center();
+window_set_size(1024+256, 1024);
 
 instance_create_layer(0, 0, "Instances", obj_pause);

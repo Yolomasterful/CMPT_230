@@ -1,10 +1,12 @@
 {
   "FolderOrderSettings":[
     {"name":"Title Screen","order":3,"path":"folders/Fonts/Title Screen.yy",},
+    {"name":"Interaction","order":8,"path":"folders/Objects/Interaction.yy",},
     {"name":"Logic Handlers","order":6,"path":"folders/Objects/Logic Handlers.yy",},
     {"name":"Traps","order":3,"path":"folders/Objects/Traps.yy",},
     {"name":"Desert","order":2,"path":"folders/Objects/Traps/Desert.yy",},
     {"name":"Dungeon","order":1,"path":"folders/Objects/Traps/Dungeon.yy",},
+    {"name":"Interaction","order":10,"path":"folders/Sprites/Interaction.yy",},
     {"name":"Tile Sets","order":8,"path":"folders/Sprites/Tile Sets.yy",},
     {"name":"Desert","order":1,"path":"folders/Sprites/Tile Sets/Desert.yy",},
     {"name":"Traps","order":1,"path":"folders/Sprites/Tile Sets/Desert/Traps.yy",},
@@ -23,6 +25,7 @@
     {"name":"rm_title_screen","order":1,"path":"rooms/rm_title_screen/rm_title_screen.yy",},
     {"name":"check_tile_collision","order":3,"path":"scripts/check_tile_collision/check_tile_collision.yy",},
     {"name":"create_boundaries","order":1,"path":"scripts/create_boundaries/create_boundaries.yy",},
+    {"name":"min_distance","order":4,"path":"scripts/min_distance/min_distance.yy",},
     {"name":"spr_pitfall","order":3,"path":"sprites/spr_pitfall/spr_pitfall.yy",},
     {"name":"spr_player","order":1,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"spr_quicksand_base","order":1,"path":"sprites/spr_quicksand_base/spr_quicksand_base.yy",},

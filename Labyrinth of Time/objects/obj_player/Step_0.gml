@@ -10,12 +10,11 @@ global.action_sprint = keyboard_check(vk_shift) or gamepad_button_check(global.g
 global.action_dodge = keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(global.gamepad_number, gp_face1);
 
 if keyboard_check_pressed(vk_f11) {
-	if (window_get_fullscreen()) {
-		window_set_fullscreen(false);
-		window_center();
-	} else {
-		window_set_fullscreen(true);
-	}
+	window_set_fullscreen(!window_get_fullscreen());
+}
+
+if keyboard_check_pressed(vk_f12) {
+	debugging = !debugging;
 }
 
 //Debug Movement

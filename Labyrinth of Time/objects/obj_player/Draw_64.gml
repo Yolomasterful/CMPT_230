@@ -3,8 +3,12 @@ draw_set_font(fnt_dialogue);
 draw_set_halign(fa_left);
 
 //Postions
-var x_align = -120;
-var y_align = 2;
+
+var original_x = -120;
+var original_y = 2;
+
+var x_align = original_x;
+var y_align = original_y;
 var bar_length = 100;
 var bar_width = 10
 //Bars
@@ -29,9 +33,6 @@ if (current_dodge_timer > 0) {
 y_align += bar_width+3;
 
 //Direction
-
-var original_x = x_align;
-var original_y = y_align;
 
 // Row 1
 if (global.key_up and global.key_left) {
@@ -87,4 +88,12 @@ x_align += bar_width + 1;
 if (global.key_down and global.key_right) {
     draw_set_color(c_orange);
     draw_rectangle(x_align, y_align, x_align + bar_width, y_align + bar_width, false);
+}
+
+x_align = original_x;
+y_align += 100;
+
+if debugging {
+	draw_set_color(c_white);
+	draw_text(x_align, y_align,"Dist: "+string(distance_to_object(obj_note)));
 }

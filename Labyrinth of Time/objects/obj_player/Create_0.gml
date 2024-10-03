@@ -1,3 +1,5 @@
+//Debug
+debugging = false;
 //Controller
 global.gamepad_number = 0;
 global.gamepad_deadzone = 0.3;
