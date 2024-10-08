@@ -7,15 +7,11 @@
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_37DCC200","path":"rooms/rm_desert/rm_desert.yy",},
-    {"name":"inst_2C31679B","path":"rooms/rm_desert/rm_desert.yy",},
-    {"name":"inst_4DFD8DF3","path":"rooms/rm_desert/rm_desert.yy",},
   ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_37DCC200","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_37DCC200","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2032.0,"y":2096.0,},
-        {"$GMRInstance":"v1","%Name":"inst_2C31679B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2C31679B","objectId":{"name":"obj_note","path":"objects/obj_note/obj_note.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1952.0,"y":1984.0,},
-        {"$GMRInstance":"v1","%Name":"inst_4DFD8DF3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4DFD8DF3","objectId":{"name":"obj_note","path":"objects/obj_note/obj_note.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2112.0,"y":1984.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRLayer":"","%Name":"TileLayers","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[
         {"$GMRTileLayer":"","%Name":"Walls","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Walls","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":128,"SerialiseWidth":128,"TileCompressedData":[-260,-2147483648,-2,0,-126,-2147483648,-2,0,-126,-2147483648,-2,0,-385,-2147483648,1,0,-10,-2147483648,1,0,-15469,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"ts_desert_floor","path":"tilesets/ts_desert_floor/ts_desert_floor.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
