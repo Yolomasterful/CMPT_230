@@ -26,11 +26,11 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
     "name":"spr_room_boundary",
     "path":"sprites/spr_room_boundary/spr_room_boundary.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

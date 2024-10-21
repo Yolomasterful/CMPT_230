@@ -10,3 +10,4 @@ if (min_distance([obj_note, obj_room_boundary]) < sprite_width/2) {
 	
 	draw_set_halign(fa_left);
 }
+
