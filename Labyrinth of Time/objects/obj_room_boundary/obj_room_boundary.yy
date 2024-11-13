@@ -32,5 +32,5 @@
     "path":"sprites/spr_room_boundary/spr_room_boundary.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

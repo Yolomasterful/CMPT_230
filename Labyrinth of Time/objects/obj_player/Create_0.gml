@@ -1,7 +1,7 @@
 // Create Event of obj_player
 
-//Character facing
-facing = 0;
+event_inherited();
+
 
 //Debug
 debugging = false;
@@ -22,7 +22,7 @@ default_walk_speed = 1;
 walk_speed = default_walk_speed;
 
 //Life
-default_lives = 3;
+default_lives = 6;
 current_lives = default_lives;
 
 //Stamina
@@ -49,3 +49,6 @@ collision_objects = [obj_room_boundary, layer_tilemap_get_id("Walls")]
 
 //Boolean Stats
 invulnerable = false; // Speed Variables
+
+ready_to_restart = false;
+

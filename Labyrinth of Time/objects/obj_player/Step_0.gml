@@ -60,13 +60,9 @@ vertical_speed = (global.key_down - global.key_up) * walk_speed;
 
 
 // Fix Diagonal Movement
-if ((global.key_right + global.key_left + global.key_up + global.key_down == 2) and 
-    (global.key_right + global.key_left != 2) and 
-    (global.key_up + global.key_down != 2)) {
-    // Ensure consistent speed when moving diagonally
-    var speed_multiplier = diagonal_scaler;  // Use your diagonal scaler
-    horizontal_speed *= speed_multiplier;
-    vertical_speed *= speed_multiplier;
+if ((global.key_right + global.key_left + global.key_up + global.key_down == 2) and (global.key_right + global.key_left != 2) and (global.key_up + global.key_down != 2)) {
+	horizontal_speed = horizontal_speed * diagonal_scaler;
+	vertical_speed = vertical_speed * diagonal_scaler;
 }
 
 
@@ -180,9 +176,9 @@ if (dodging) {
 }
 
 // Horizontal Movement and Boundary Check
-if (place_meeting(x + horizontal_speed, y, obj_collision_object)) {
+if (place_meeting(x + horizontal_speed, y, collision_objects)) {
     // Collision handling for horizontal movement
-    while (!place_meeting(x + sign(horizontal_speed), y, obj_collision_object)) {
+    while (!place_meeting(x + sign(horizontal_speed), y, collision_objects)) {
         x += sign(horizontal_speed);
     }
     horizontal_speed = 0; // Stop horizontal movement
@@ -190,9 +186,9 @@ if (place_meeting(x + horizontal_speed, y, obj_collision_object)) {
 x += horizontal_speed;
 
 // Vertical Movement and Boundary Check
-if (place_meeting(x, y + vertical_speed, obj_collision_object)) {
+if (place_meeting(x, y + vertical_speed, collision_objects)) {
     // Collision handling for vertical movement
-    while (!place_meeting(x, y + sign(vertical_speed), obj_collision_object)) {
+    while (!place_meeting(x, y + sign(vertical_speed), collision_objects)) {
         y += sign(vertical_speed);
     }
     vertical_speed = 0; // Stop vertical movement
@@ -202,5 +198,31 @@ y += vertical_speed;
 // Round the player's coordinates to avoid subpixel movement issues
 x = round(x);
 y = round(y);
+
+// Apply knockback logic
+
+
+
+
+switch(state) {
+	case states.KNOCKBACK:
+		if knockback_time-- <= 0 state = states.IDLE;
+		
+	break;
+	
+	case states.DEAD:
+	if ready_to_restart and mouse_check_button_pressed(mb_left) game_restart();
+	
+	
+}
+	
+// Step Event of obj_player
+
+
+
+
+
+
+
 
 
