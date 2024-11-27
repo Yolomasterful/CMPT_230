@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Traps",
-    "path":"folders/Sprites/Tile Sets/Desert/Traps.yy",
+    "path":"folders/Sprites/Floors/Desert/Traps.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

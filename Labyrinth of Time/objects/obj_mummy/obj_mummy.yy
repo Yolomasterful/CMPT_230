@@ -3,18 +3,18 @@
   "%Name":"obj_mummy",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_mummy",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemy",
-    "path":"folders/Entity/Enemy.yy",
+    "path":"folders/Objects/Enemy.yy",
   },
-  "parentObjectId":{
-    "name":"object_enemy_par",
-    "path":"objects/object_enemy_par/object_enemy_par.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,12 +33,9 @@
   "resourceVersion":"2.0",
   "solid":true,
   "spriteId":{
-    "name":"s_enemy_idle",
-    "path":"sprites/s_enemy_idle/s_enemy_idle.yy",
+    "name":"Sprite38",
+    "path":"sprites/Sprite38/Sprite38.yy",
   },
-  "spriteMaskId":{
-    "name":"s_enemy_idle",
-    "path":"sprites/s_enemy_idle/s_enemy_idle.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

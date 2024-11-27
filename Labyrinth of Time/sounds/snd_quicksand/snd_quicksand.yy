@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_quicksand",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":9.012245,
+  "name":"snd_quicksand",
+  "parent":{
+    "name":"Sound Effects",
+    "path":"folders/Sounds/Sound Effects.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_quicksand.mp3",
+  "type":0,
+  "volume":1.0,
+}

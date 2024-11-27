@@ -1,14 +1,16 @@
 {
   "$GMTileSet":"v1",
   "%Name":"ts_desert_wall",
-  "autoTileSets":[],
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":false,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,],},
+  ],
   "macroPageTiles":{
     "SerialiseHeight":0,
     "SerialiseWidth":0,
     "TileSerialiseData":[],
   },
   "name":"ts_desert_wall",
-  "out_columns":10,
+  "out_columns":5,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -18,8 +20,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"_2767afa8_c102_4382_a23d_e539b3d16a7b",
-    "path":"sprites/_2767afa8_c102_4382_a23d_e539b3d16a7b/_2767afa8_c102_4382_a23d_e539b3d16a7b.yy",
+    "name":"spr_desert_wall",
+    "path":"sprites/spr_desert_wall/spr_desert_wall.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
@@ -34,5 +36,5 @@
   "tileWidth":32,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":100,
+  "tile_count":27,
 }

@@ -6,8 +6,8 @@
   "name":"obj_pitfall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dungeon",
-    "path":"folders/Objects/Traps/Dungeon.yy",
+    "name":"Jungle",
+    "path":"folders/Objects/Traps/Jungle.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_pitfall",
-    "path":"sprites/spr_pitfall/spr_pitfall.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

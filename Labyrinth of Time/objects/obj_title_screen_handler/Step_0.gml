@@ -17,10 +17,13 @@ if (select) {
 	switch (selected_button) {
 		case 0:
 			//Play
+			audio_play_sound(snd_ui_2, 1, false);
+			audio_stop_sound(msc_menu_title);
 			room_goto(rm_desert);
 			break;
 		case 1:
 			//Options
+			audio_play_sound(snd_ui_2, 1, false);
 			break;
 		case 2:
 			//Exit
@@ -30,6 +33,7 @@ if (select) {
 }
 
 if (global.menu_up) {
+	audio_play_sound(snd_ui_1, 1, false);
 	if (selected_button == 0) {
 		selected_button = button_count - 1;
 	}
@@ -39,6 +43,7 @@ if (global.menu_up) {
 }
 
 if (global.menu_down) {
+	audio_play_sound(snd_ui_1, 1, false);
 	if (selected_button == button_count - 1) {
 		selected_button = 0;
 	}
