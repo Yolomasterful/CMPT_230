@@ -11,7 +11,8 @@ if (global.paused) {
 	surface_reset_target();
 }
 
-if (global.menu_pause) {
+if (global.menu_pause or global.pause_toggle) {
+	global.pause_toggle = false;
 	if (!global.paused) {
 		global.paused = true;
 		
@@ -30,6 +31,8 @@ if (global.menu_pause) {
 		buffer_get_surface(pause_surface_buffer, pause_surface, 0);
 	} else {
 		global.paused = false;
+		global.menu_pause = false;
+		
 		instance_activate_all();
 		if (surface_exists(pause_surface)) {
 			surface_free(pause_surface);

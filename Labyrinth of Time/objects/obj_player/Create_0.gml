@@ -49,3 +49,5 @@ invulnerable = false;
 //Gems
 gems = [false, false, false, false];
 socketed = [false, false, false, false];
+//Sound
+walking_sound = snd_walking_stringed;

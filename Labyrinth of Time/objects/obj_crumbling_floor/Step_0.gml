@@ -2,7 +2,7 @@ if (place_meeting(x, y, obj_player) and !crumbled) {
 	touched = true;
 }
 if (touched and image_index == 0) {
-	audio_play_sound(snd_tilecrumble, 1, 0);
+	audio_play_sound(snd_tilecrumble, 1, 0, global.master_vol*global.sfx_vol);
 }
 if touched {
 	if (image_index < 17) {

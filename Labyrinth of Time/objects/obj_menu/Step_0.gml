@@ -9,6 +9,7 @@ if keyboard_check_pressed(vk_f11) {
 	if (window_get_fullscreen()) {
 		buttons[1, 0] = "Window Size\nFullscreen";
 	} else {
+		window_set_size(1024, 1024);
 		buttons[1, 0] = "Window Size\nWindowed";
 	}
 }
@@ -21,8 +22,8 @@ if (room == rm_title_screen) {
 	center_x = room_width/2;
 	center_y = room_height/2;
 } else {
-	center_x = camera_get_view_width(view_camera[0])/2;
-	center_y = camera_get_view_height(view_camera[0])/2;
+	center_x = camera_get_view_x(view_camera[0])+camera_get_view_height(view_camera[0])/2;
+	center_y = camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])/2;
 }
 
 button_count = array_length(buttons[button_level]);
@@ -109,7 +110,7 @@ if (global.menu_select) {
 			} else {
 				switch (selected_button) {
 					case 0:
-						
+						global.pause_toggle = true;
 						break;
 					case 1:
 						button_level = 1;
@@ -129,6 +130,7 @@ if (global.menu_select) {
 					if (window_get_fullscreen()) {
 						buttons[1, 0] = "Window Size\nFullscreen";
 					} else {
+						window_set_size(1024, 1024);
 						buttons[1, 0] = "Window Size\nWindowed";
 					}
 					break;
@@ -173,4 +175,3 @@ if (global.menu_select) {
 			}
 	}
 }
-show_debug_message("Paused: " + string(global.paused));
