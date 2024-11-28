@@ -1,9 +1,3 @@
-global.paused = false;
-
-global.master_vol = 1.0;
-global.music_vol = 1.0;
-global.sfx_vol = 1.0;
-
 org_x = x;
 org_y = y;
 
@@ -48,5 +42,3 @@ for (var i = 0; i < global.sfx_vol*10; i++) {
 	buttons[1, 3] += "█";
 }
 buttons[1, 4] = "Back"
-
-audio_play_sound(msc_menu_title, 1, true);

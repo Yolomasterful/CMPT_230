@@ -79,16 +79,16 @@ if (button_level == 1 and (1 <= selected_button and selected_button <= 3) and no
 }
 
 selected_button += global.menu_down - global.menu_up
-if (global.menu_up or global.menu_down) {audio_play_sound(snd_ui_1, 1, false);}
+if (global.menu_up or global.menu_down) {audio_play_sound(snd_ui_1, 1, false, global.master_vol*global.sfx_vol);}
 if (selected_button >= button_count) {selected_button = 0;}
 if (selected_button < 0) {selected_button = button_count - 1;}
 
 if (global.menu_select) {
 	if ((selected_button != button_count - 1) and not (button_level == 1 and (1 <= selected_button and selected_button <= 3))) {
-		audio_play_sound(snd_ui_2, 1, false);
+		audio_play_sound(snd_ui_2, 1, false, global.master_vol*global.sfx_vol);
 		
 	} else if ((selected_button != button_count - 1) and (global.menu_left or global.menu_right)) {
-		audio_play_sound(snd_ui_1, 1, false);
+		audio_play_sound(snd_ui_1, 1, false, global.master_vol*global.sfx_vol);
 	}
 	switch (button_level) {
 		case 0:
