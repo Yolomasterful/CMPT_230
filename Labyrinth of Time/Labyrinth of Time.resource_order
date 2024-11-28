@@ -40,6 +40,7 @@
     {"name":"obj_gem_socket_yellow","order":3,"path":"objects/obj_gem_socket_yellow/obj_gem_socket_yellow.yy",},
     {"name":"obj_gem_yellow","order":3,"path":"objects/obj_gem_yellow/obj_gem_yellow.yy",},
     {"name":"obj_menu","order":1,"path":"objects/obj_menu/obj_menu.yy",},
+    {"name":"obj_music","order":3,"path":"objects/obj_music/obj_music.yy",},
     {"name":"obj_player_hitbox","order":1,"path":"objects/obj_player_hitbox/obj_player_hitbox.yy",},
     {"name":"obj_title","order":2,"path":"objects/obj_title/obj_title.yy",},
     {"name":"rm_desert","order":2,"path":"rooms/rm_desert/rm_desert.yy",},

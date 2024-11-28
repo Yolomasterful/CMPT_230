@@ -78,6 +78,7 @@
     {"id":{"name":"obj_gem_yellow","path":"objects/obj_gem_yellow/obj_gem_yellow.yy",},},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
     {"id":{"name":"obj_mummy","path":"objects/obj_mummy/obj_mummy.yy",},},
+    {"id":{"name":"obj_music","path":"objects/obj_music/obj_music.yy",},},
     {"id":{"name":"obj_note","path":"objects/obj_note/obj_note.yy",},},
     {"id":{"name":"obj_pause","path":"objects/obj_pause/obj_pause.yy",},},
     {"id":{"name":"obj_pitfall","path":"objects/obj_pitfall/obj_pitfall.yy",},},

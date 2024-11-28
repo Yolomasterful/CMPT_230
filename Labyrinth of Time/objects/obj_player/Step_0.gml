@@ -144,9 +144,9 @@ if (global.key_up and global.key_right) {
 if (global.action_dodge and not dodging and not exhausted and current_stamina >= dodge_stamina_drain) {
     dodging = true;
 	if irandom(1) {
-		audio_play_sound(snd_dash_1, 1, false);
+		audio_play_sound(snd_dash_1, 1, false, global.master_vol*global.sfx_vol);
 	} else {
-		audio_play_sound(snd_dash_2, 1, false);
+		audio_play_sound(snd_dash_2, 1, false, global.master_vol*global.sfx_vol);
 	}
     current_stamina = max(current_stamina - dodge_stamina_drain, 0);  // Use 50 stamina, but don't go below 0
 	current_stamina_delay = default_stamina_delay;

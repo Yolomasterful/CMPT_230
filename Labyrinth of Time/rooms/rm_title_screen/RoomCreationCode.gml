@@ -6,3 +6,4 @@ global.paused = false;
 window_set_fullscreen(true);
 
 instance_create_layer(0, 0, "Logic", obj_title);
+instance_create_layer(0, 0, "Logic", obj_music);
