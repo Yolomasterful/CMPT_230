@@ -1,3 +1,5 @@
+global.died = false;
+
 org_x = x;
 org_y = y;
 

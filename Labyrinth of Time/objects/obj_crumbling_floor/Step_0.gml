@@ -5,11 +5,11 @@ if (touched and image_index == 0) {
 	audio_play_sound(snd_tilecrumble, 1, 0, global.master_vol*global.sfx_vol);
 }
 if touched {
-	if (image_index < 17) {
+	if (image_index < sprite_get_number(sprite_index) - 1) {
 		image_speed = 2;
-	} else if (image_index >= 17) {
+	} else if (image_index >= sprite_get_number(sprite_index) - 1) {
 		image_speed = 0;
-		image_index = 17;
+		image_index = sprite_get_number(sprite_index) - 1;
 		touched = false;
 		crumbled = true;
 		current_revert_delay = default_revert_delay;
@@ -22,7 +22,7 @@ if touched {
 		image_index = 0;
 		touched = false;
 	}
-	if image_index < 3 {
+	if (image_index < sprite_get_number(sprite_index) - 3) {
 		crumbled = false;
 	}
 } else {

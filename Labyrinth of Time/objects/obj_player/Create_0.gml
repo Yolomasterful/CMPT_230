@@ -16,6 +16,7 @@ walk_speed = default_walk_speed;
 //Life
 default_lives = 3;
 current_lives = default_lives;
+global.died = false;
 //Stamina
 default_stamina = 100;
 current_stamina = default_stamina;
@@ -40,7 +41,7 @@ flooring_objects = [layer_tilemap_get_id("Flooring"), layer_tilemap_get_id("Quic
 //Interactables
 interactables = [obj_gem_blue, obj_gem_green, obj_gem_pink, obj_gem_yellow];
 //Quicksand
-default_quicksand_delay = 3 * 60;
+default_quicksand_delay = 5 * 60;
 quicksand_delay = default_quicksand_delay;
 //Crumbling Tile
 crumbling_floor = false;

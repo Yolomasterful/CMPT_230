@@ -13,6 +13,26 @@ if keyboard_check_pressed(vk_f12) {
 	debugging = !debugging;
 }
 
+depth = -1000
+
+if (debugging) {
+	current_lives = default_lives;
+	current_stamina = default_stamina;
+	//Debug binds
+	if (keyboard_check_pressed(vk_numpad8)) {
+	y--;
+	}
+	if (keyboard_check_pressed(vk_numpad2)) {
+		y++;
+	}
+	if (keyboard_check_pressed(vk_numpad4)) {
+		x--;
+	}
+	if (keyboard_check_pressed(vk_numpad6)) {
+		x++;
+	}
+}
+
 //Key Cancellation
 if (global.key_left and global.key_right) {
 	global.key_left = false;
@@ -23,18 +43,27 @@ if (global.key_up and global.key_down) {
 	global.key_down = false;
 }
 
-//Debug binds
-if (keyboard_check_pressed(vk_numpad8)) {
-	y--;
+//Heal
+with obj_health {
+	if (place_meeting(x, y, obj_player)) {
+		instance_destroy()
+		if other.current_lives < other.default_lives {
+			other.current_lives++;
+		}
+	}
 }
-if (keyboard_check_pressed(vk_numpad2)) {
-	y++;
-}
-if (keyboard_check_pressed(vk_numpad4)) {
-	x--;
-}
-if (keyboard_check_pressed(vk_numpad6)) {
-	x++;
+
+//Death
+if (current_lives == 0) {
+	if (sprite_index != spr_player_death) {
+		sprite_index = spr_player_death
+		image_speed = 1;
+	} else if (image_index >= sprite_get_number(spr_player_death) - 1) {
+		image_speed = 0;
+		global.died = true;
+	}
+	
+	exit;
 }
 
 //Crumbled Tiles
@@ -47,7 +76,7 @@ with (collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_crum
 show_debug_message("Touching Crumbling Tile: "+string(crumbling_floor));
 
 //Check Fallen
-var overlap_percent = check_tile_inside_collision(x - sprite_width/2, y, flooring_objects, sprite_width, sprite_height/2);
+var overlap_percent = check_tile_inside_collision(x - sprite_width/2, y - sprite_height/2 + sprite_height*(4/5), x + sprite_width/2, y + sprite_height/2, flooring_objects);
 if (overlap_percent >= 0.8) {
 	last_safe_coords = [x, y];
 } 
@@ -57,7 +86,7 @@ if ((overlap_percent < 0.3) and not dodging and not crumbling_floor and not fall
 	audio_play_sound(snd_falling, 10, false, global.master_vol*global.sfx_vol);
 	sprite_index = spr_player_pitfall;
 	image_speed = 0.5;
-} else if ((overlap_percent < 0.3) and image_index >= 6 and falling) {
+} else if (image_index >= 6 and falling) {
 	falling = false;
 	image_speed = 0;
 	current_lives--;
@@ -82,12 +111,20 @@ if (exhausted and current_stamina >= default_stamina) {
     exhausted = false;  // Re-enable sprinting/dodging when stamina is full
 }
 
-var touch_quicksand = place_meeting(x, y, layer_tilemap_get_id("Quicksand"))
+var touch_quicksand = place_meeting(x, y, layer_tilemap_get_id("Quicksand")) and 0.3 > check_tile_inside_collision(x - sprite_width/2, y - sprite_height/2 + sprite_height*(4/5), x + sprite_width/2, y + sprite_height/2, [layer_tilemap_get_id("Flooring")]);
 
 //Quicksand Tiles
 if (touch_quicksand) {
 	walk_speed = default_walk_speed / 2;
 	sprint_speed = default_walk_speed;
+	quicksand_delay--;
+	if (quicksand_delay <= 0) {
+		audio_play_sound(snd_damage_1, 10, false)
+		current_lives--;
+		quicksand_delay = default_quicksand_delay;
+	} 
+} else {
+	quicksand_delay = default_quicksand_delay;
 }
 
 //Sprint
@@ -206,6 +243,7 @@ if (dodging) {
 with (obj_crumbling_floor) {
 	if (place_meeting(x, y, other)) {
 		if (!crumbled) {
+			touched = true;
 			other.crumbling_floor = true;
 			break
 		}
@@ -246,8 +284,18 @@ obj_player_hitbox.y = y;
 
 if audio_is_playing(walking_sound) and not (global.key_up || global.key_down || global.key_left || global.key_right){
 	audio_stop_sound(walking_sound)
-} else if ((global.key_up || global.key_down || global.key_left || global.key_right) and not falling) {
-	walking_sound = audio_play_sound(snd_walking_stringed, 10, true, global.master_vol*global.sfx_vol);
+} else if ((global.key_up || global.key_down || global.key_left || global.key_right) and not falling and not audio_is_playing(walking_sound)) {
+	switch (random(2)) {
+		case 0:
+			walking_sound = audio_play_sound(snd_walking_issolated_1, 10, true, global.master_vol*global.sfx_vol);
+			break;
+		case 1:
+			walking_sound = audio_play_sound(snd_walking_issolated_2, 10, true, global.master_vol*global.sfx_vol);
+			break;
+		case 2:
+			walking_sound = audio_play_sound(snd_walking_issolated_3, 10, true, global.master_vol*global.sfx_vol);
+			break;
+	}
 }
 
 //Sprite Selection

@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"msc_desert.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.25,
 }

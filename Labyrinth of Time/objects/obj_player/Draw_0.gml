@@ -1,5 +1,7 @@
 draw_self();
-
+if (debugging) {
+	check_tile_inside_collision(x - sprite_width/2, y - sprite_height/2 + sprite_height*(4/5), x + sprite_width/2, y + sprite_height/2, flooring_objects);
+}
 //Prompts
 if (min_distance(interactables) < sprite_width/2) {
 	draw_set_halign(fa_center);
