@@ -1,5 +1,3 @@
-//macros
-//alarms
 #macro CAN_ATTACK   0
 
 
@@ -10,4 +8,5 @@ enum states {
 	ATTACK,
 	DEAD,
 	KNOCKBACK,
+	
 }

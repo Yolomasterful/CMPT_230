@@ -9,12 +9,28 @@ global.action_interact = keyboard_check_pressed(ord("E")) or gamepad_button_chec
 global.action_sprint = keyboard_check(vk_shift) or gamepad_button_check(global.gamepad_number, gp_shoulderl);// or gamepad_button_check(gamepad_number, gp_shoulderlb);
 global.action_dodge = keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(global.gamepad_number, gp_face1);
 
-if keyboard_check_pressed(vk_f11) {
-	window_set_fullscreen(!window_get_fullscreen());
-}
-
 if keyboard_check_pressed(vk_f12) {
 	debugging = !debugging;
+}
+
+depth = -1000
+
+if (debugging) {
+	current_lives = default_lives;
+	current_stamina = default_stamina;
+	//Debug binds
+	if (keyboard_check_pressed(vk_numpad8)) {
+	y--;
+	}
+	if (keyboard_check_pressed(vk_numpad2)) {
+		y++;
+	}
+	if (keyboard_check_pressed(vk_numpad4)) {
+		x--;
+	}
+	if (keyboard_check_pressed(vk_numpad6)) {
+		x++;
+	}
 }
 
 //Key Cancellation
@@ -27,18 +43,57 @@ if (global.key_up and global.key_down) {
 	global.key_down = false;
 }
 
-//Debug binds
-if (keyboard_check_pressed(vk_numpad8)) {
-	y--;
+//Heal
+with obj_health {
+	if (place_meeting(x, y, obj_player)) {
+		instance_destroy()
+		if other.current_lives < other.default_lives {
+			other.current_lives++;
+		}
+	}
 }
-if (keyboard_check_pressed(vk_numpad2)) {
-	y++;
+
+//Death
+if (current_lives == 0) {
+	if (sprite_index != spr_player_death) {
+		sprite_index = spr_player_death
+		image_speed = 1;
+	} else if (image_index >= sprite_get_number(spr_player_death) - 1) {
+		image_speed = 0;
+		global.died = true;
+	}
+	
+	exit;
 }
-if (keyboard_check_pressed(vk_numpad4)) {
-	x--;
+
+//Crumbled Tiles
+with (collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_crumbling_floor, false, true)) {
+	if (!crumbled) {
+		obj_player.crumbling_floor = true;
+		break;
+	}
 }
-if (keyboard_check_pressed(vk_numpad6)) {
-	x++;
+show_debug_message("Touching Crumbling Tile: "+string(crumbling_floor));
+
+//Check Fallen
+var overlap_percent = check_tile_inside_collision(x - sprite_width/2, y - sprite_height/2 + sprite_height*(4/5), x + sprite_width/2, y + sprite_height/2, flooring_objects);
+if (overlap_percent >= 0.8) {
+	last_safe_coords = [x, y];
+} 
+if ((overlap_percent < 0.3) and not dodging and not crumbling_floor and not falling) {
+	falling = true;
+	audio_stop_sound(walking_sound);
+	audio_play_sound(snd_falling, 10, false, global.master_vol*global.sfx_vol);
+	sprite_index = spr_player_pitfall;
+	image_speed = 0.5;
+} else if (image_index >= 6 and falling) {
+	falling = false;
+	image_speed = 0;
+	current_lives--;
+	audio_play_sound(snd_damage_1, 10, false, global.master_vol*global.sfx_vol);
+	sprite_index = spr_player_down;
+	x = last_safe_coords[0];
+	y = last_safe_coords[1];
 }
 
 //Stamina Handler
@@ -56,12 +111,20 @@ if (exhausted and current_stamina >= default_stamina) {
     exhausted = false;  // Re-enable sprinting/dodging when stamina is full
 }
 
-var touch_quicksand = place_meeting(x, y, layer_tilemap_get_id("Quicksand"))
+var touch_quicksand = place_meeting(x, y, layer_tilemap_get_id("Quicksand")) and 0.3 > check_tile_inside_collision(x - sprite_width/2, y - sprite_height/2 + sprite_height*(4/5), x + sprite_width/2, y + sprite_height/2, [layer_tilemap_get_id("Flooring")]);
 
 //Quicksand Tiles
 if (touch_quicksand) {
 	walk_speed = default_walk_speed / 2;
 	sprint_speed = default_walk_speed;
+	quicksand_delay--;
+	if (quicksand_delay <= 0) {
+		audio_play_sound(snd_damage_1, 10, false)
+		current_lives--;
+		quicksand_delay = default_quicksand_delay;
+	} 
+} else {
+	quicksand_delay = default_quicksand_delay;
 }
 
 //Sprint
@@ -92,14 +155,14 @@ if ((global.key_right + global.key_left + global.key_up + global.key_down == 2) 
 
 //Quicksand Tiles Nudging
 if (touch_quicksand) {
-	var freq = 3;
+	var freq = 1;
 	var v_rand = random_range(-freq, freq);
 	var h_rand = random_range(-freq, freq);
 	if v_rand == -freq or v_rand == freq {
-		vertical_speed += sign(v_rand) / 4;
+		vertical_speed += sign(v_rand);
 	}
 	if h_rand == -freq or h_rand == freq {
-		horizontal_speed += sign(h_rand) / 4;
+		horizontal_speed += sign(h_rand);
 	}
 	round_movement = false;
 }
@@ -126,10 +189,10 @@ if (global.key_up and global.key_right) {
 //Dodge
 if (global.action_dodge and not dodging and not exhausted and current_stamina >= dodge_stamina_drain) {
     dodging = true;
-	if random_range(0,1) {
-		audio_play_sound(snd_dash_1, 1, false);
+	if irandom(1) {
+		audio_play_sound(snd_dash_1, 1, false, global.master_vol*global.sfx_vol);
 	} else {
-		audio_play_sound(snd_dash_2, 1, false);
+		audio_play_sound(snd_dash_2, 1, false, global.master_vol*global.sfx_vol);
 	}
     current_stamina = max(current_stamina - dodge_stamina_drain, 0);  // Use 50 stamina, but don't go below 0
 	current_stamina_delay = default_stamina_delay;
@@ -180,21 +243,17 @@ if (dodging) {
 with (obj_crumbling_floor) {
 	if (place_meeting(x, y, other)) {
 		if (!crumbled) {
+			touched = true;
 			other.crumbling_floor = true;
 			break
 		}
 	}
 }
 
-//Check Fallen
-var overlap_percent = check_tile_inside_collision(x - sprite_width/2, y, flooring_objects, sprite_width, sprite_height/2);
-if (overlap_percent >= 0.8) {
-	last_safe_coords = [x, y];
-} else if ((overlap_percent < 0.3) and not dodging and not crumbling_floor) {
-	//Falling animation/sound would go here
-	current_lives--;
-	x = last_safe_coords[0];
-	y = last_safe_coords[1];
+if falling {
+	vertical_speed = 0;
+	horizontal_speed = 0;
+	exit
 }
 
 // Horizontal Movement and Boundary Check
@@ -223,8 +282,23 @@ if round_movement {
 obj_player_hitbox.x = x;
 obj_player_hitbox.y = y;
 
+if audio_is_playing(walking_sound) and not (global.key_up || global.key_down || global.key_left || global.key_right){
+	audio_stop_sound(walking_sound)
+} else if ((global.key_up || global.key_down || global.key_left || global.key_right) and not falling and not audio_is_playing(walking_sound)) {
+	switch (random(2)) {
+		case 0:
+			walking_sound = audio_play_sound(snd_walking_issolated_1, 10, true, global.master_vol*global.sfx_vol);
+			break;
+		case 1:
+			walking_sound = audio_play_sound(snd_walking_issolated_2, 10, true, global.master_vol*global.sfx_vol);
+			break;
+		case 2:
+			walking_sound = audio_play_sound(snd_walking_issolated_3, 10, true, global.master_vol*global.sfx_vol);
+			break;
+	}
+}
+
 //Sprite Selection
-//show_debug_message(string(direction));
 if (global.key_up || global.key_down || global.key_left || global.key_right) {
 	image_speed = 1;
 	if (direction == 0) {

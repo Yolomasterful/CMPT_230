@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Doors",
-    "path":"folders/Objects/Doors.yy",
+    "path":"folders/Objects/Interaction/Doors.yy",
   },
   "parentObjectId":null,
   "persistent":false,

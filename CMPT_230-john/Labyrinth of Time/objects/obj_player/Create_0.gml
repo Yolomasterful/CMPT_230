@@ -1,5 +1,4 @@
 event_inherited();
-
 //Debug
 debugging = false;
 //Controller
@@ -18,6 +17,7 @@ walk_speed = default_walk_speed;
 //Life
 default_lives = 3;
 current_lives = default_lives;
+global.died = false;
 //Stamina
 default_stamina = 100;
 current_stamina = default_stamina;
@@ -35,13 +35,14 @@ default_dodge_timer = 2 * 60 / dodge_speed;
 current_dodge_timer = default_dodge_timer;
 dodging = false;
 //Collisions
+falling = false;
 instance_create_layer(x, y, layer, obj_player_hitbox);
 collision_objects = [obj_boundary, obj_desert_door, layer_tilemap_get_id("Walls")];
 flooring_objects = [layer_tilemap_get_id("Flooring"), layer_tilemap_get_id("Quicksand")]
 //Interactables
 interactables = [obj_gem_blue, obj_gem_green, obj_gem_pink, obj_gem_yellow];
 //Quicksand
-default_quicksand_delay = 3 * 60;
+default_quicksand_delay = 5 * 60;
 quicksand_delay = default_quicksand_delay;
 //Crumbling Tile
 crumbling_floor = false;
@@ -50,3 +51,5 @@ invulnerable = false;
 //Gems
 gems = [false, false, false, false];
 socketed = [false, false, false, false];
+//Sound
+walking_sound = snd_walking_stringed;

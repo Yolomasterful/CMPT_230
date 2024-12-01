@@ -7,9 +7,8 @@ function calc_entity_movement() {
 	x += hsp; 
 	y += vsp;
 	
-	
 	// slowdown 
-	hsp *= global.drag;
+	hsp *= global.drag; 
 	vsp *= global.drag; 
 	
 	check_if_stopped();
@@ -52,37 +51,35 @@ function check_for_player() {
     /// Check if the player is close enough
     var _dis = distance_to_object(obj_player);
 
-    // If player is within alert distance or already in alert mode
+    // If player is within alert distance or already in alert mode, but outside of attack distance
     if ((_dis <= alert_dis || alert) && _dis > attack_dis) { 
         alert = true;
-        chase_time++; // Increment chase timer
 		
-		 // Stop chasing if too far from the player
-        if (_dis > max_chase_distance) { 
-            alert = false;
-            path_end();
-            chase_time = 0; // Reset chase timer
-            return;
-        }
-
-       
+		if (!sound_played_alert) {
+			audio_play_sound(snd_mummy_attack_2, 10, false, global.master_vol * global.sfx_vol);
+			sound_played_alert = true;
+		}
+			
 		
-		 // Check if the chase time limit is exceeded
-        if (chase_time > chase_time_limit) { 
-            // Kill and respawn the enemy
-            state = states.DEAD;
-            alarm[1] = room_speed; // Respawn after 1 second
-            return;
-        }
-
-      
+		chase_time ++
+		
+		if (chase_time > chase_time_limit) {
+			state = states.DEAD;
+			if (!sound_played_dead) {
+				audio_play_sound(snd_mummy_2, 10, false, global.master_vol*global.sfx_vol);
+				sound_played_dead = true;
+			}
+		
+			
+		}
 
         // Check if it's time to recalculate the path
         if (calc_path_timer-- <= 0) { 
+            // Reset timer
             calc_path_timer = calc_path_delay;
 
             // Attempt to create a path to the player
-            var _type = (x == xp && y == yp) ? 0 : 1; 
+			if x == xp and y == yp var _type = 0 else var _type = 1; 
             var _found_player = mp_grid_path(global.mp_grid, path, x, y, obj_player.x, obj_player.y, _type);
 
             // Start the path if we successfully found one
@@ -92,15 +89,11 @@ function check_for_player() {
         }
     } 
     // If player is within attack distance
-    else if (_dis <= attack_dis) { 
-        path_end();
-        state = states.ATTACK;
-    }
-    // If no longer alert
     else { 
-        alert = false;
-        path_end();
-        chase_time = 0; // Reset chase timer
+        if (_dis <= attack_dis) { 
+            path_end();
+			state = states.ATTACK;
+        }
     }
 }
 
@@ -117,12 +110,12 @@ function enemy_anim(){
 	break;
 	case states.ATTACK:
 		sprite_index = s_attack;
+	
 
 	
 	break;
 	case states.DEAD:
 		sprite_index = s_dead;
-		path_end();
 	
 	break;
 }
@@ -137,8 +130,8 @@ function perform_attack() {
 	if image_index >= attack_frame and can_attack {
 		//reset for next attack
 		can_attack = false;
-		alarm[0] = attack_cooldown; 
-		
+		alarm[2] = attack_cooldown; 
+		audio_play_sound(snd_mummy_attack_1, 10, false, global.master_vol*global.sfx_vol);
 		//get attack direction
 		var _dir = point_direction(x, y, obj_player.x, obj_player.y);
 		

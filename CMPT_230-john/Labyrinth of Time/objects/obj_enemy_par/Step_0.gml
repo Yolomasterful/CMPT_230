@@ -28,6 +28,9 @@ switch(state) {
 		calc_entity_movement(); 
 		enemy_anim();
 	
+	
 	break;
 }
+	
+
 	

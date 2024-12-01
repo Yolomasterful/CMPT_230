@@ -1,28 +1,22 @@
 function damage_entity(_tid, _sid, _damage, _time) {
-	///damage the target, and return the dea status
-	
-	with(_tid) {
-		current_lives -= _damage; 
-		var _dead = is_dead();
-		if _dead var _dis = 5 else var _dis = 3;
-		var _dir = point_direction(_sid.x, _sid.y, x, y);
-		hsp += lengthdir_x(_dis, _dir);
-		vsp += lengthdir_y(_dis, _dir);
-		calc_path_timer = _time;
-		alert = true;
-		knockback_time = _time;
-		image_index = 0;
-		if !_dead state = states.KNOCKBACK;
-		
-		
-		
-		
-		
-		return _dead; 
-		
-		
-		
-	}
+    /// Damage the target and return the dead status
+
+    with (_tid) {
+        current_lives -= _damage; 
+		audio_play_sound(snd_damage_1, 10, false, global.master_vol*global.sfx_vol);
+        var _dead = is_dead(); // Check if the entity is dead
+
+        // If not dead, apply knockback state and set timers
+        if (!_dead) {
+            calc_path_timer = _time;
+            alert = true;
+            knockback_time = _time;
+            image_index = 0;
+            state = states.KNOCKBACK;
+        }
+
+        return _dead; 
+    }
 }
 
 function is_dead() {
@@ -32,6 +26,7 @@ function is_dead() {
 		if current_lives <= 0 {
 			state = states.DEAD;
 			current_lives = 0;
+			global.died = true;
 			image_index = 0;
 			switch(object_index) {
 				default: 

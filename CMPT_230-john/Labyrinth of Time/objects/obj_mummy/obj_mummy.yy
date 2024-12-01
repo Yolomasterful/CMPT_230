@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":true,
   "spriteId":{
-    "name":"s_enemy_idle",
-    "path":"sprites/s_enemy_idle/s_enemy_idle.yy",
+    "name":"spr_mummy_down",
+    "path":"sprites/spr_mummy_down/spr_mummy_down.yy",
   },
   "spriteMaskId":null,
   "visible":true,
