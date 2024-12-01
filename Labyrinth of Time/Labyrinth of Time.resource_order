@@ -52,6 +52,7 @@
     {"name":"sCharacterPItFall","order":5,"path":"sprites/sCharacterPItFall/sCharacterPItFall.yy",},
     {"name":"sCharacterRight","order":2,"path":"sprites/sCharacterRight/sCharacterRight.yy",},
     {"name":"sCharacterUp","order":3,"path":"sprites/sCharacterUp/sCharacterUp.yy",},
+    {"name":"sCharaterAtk","order":6,"path":"sprites/sCharaterAtk/sCharaterAtk.yy",},
     {"name":"sDesertWall","order":3,"path":"sprites/sDesertWall/sDesertWall.yy",},
     {"name":"sDoorDesert","order":2,"path":"sprites/sDoorDesert/sDoorDesert.yy",},
     {"name":"sJungleFloor","order":1,"path":"sprites/sJungleFloor/sJungleFloor.yy",},

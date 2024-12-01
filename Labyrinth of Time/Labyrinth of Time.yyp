@@ -79,6 +79,7 @@
     {"id":{"name":"sCharacterPItFall","path":"sprites/sCharacterPItFall/sCharacterPItFall.yy",},},
     {"id":{"name":"sCharacterRight","path":"sprites/sCharacterRight/sCharacterRight.yy",},},
     {"id":{"name":"sCharacterUp","path":"sprites/sCharacterUp/sCharacterUp.yy",},},
+    {"id":{"name":"sCharaterAtk","path":"sprites/sCharaterAtk/sCharaterAtk.yy",},},
     {"id":{"name":"sDesertWall","path":"sprites/sDesertWall/sDesertWall.yy",},},
     {"id":{"name":"sDoorDesert","path":"sprites/sDoorDesert/sDoorDesert.yy",},},
     {"id":{"name":"sJungleFloor","path":"sprites/sJungleFloor/sJungleFloor.yy",},},
