@@ -3,7 +3,7 @@
   "%Name":"ts_crumble",
   "bboxMode":0,
   "bbox_bottom":31,
-  "bbox_left":32,
+  "bbox_left":128,
   "bbox_right":575,
   "bbox_top":0,
   "collisionKind":1,
