@@ -4,6 +4,7 @@ debugging = false;
 global.gamepad_number = 0;
 global.gamepad_deadzone = 0.3;
 //Movement
+direction = 270;
 vertical_speed = 0;
 horizontal_speed = 0;
 diagonal_scaler = 0.75;
@@ -14,7 +15,7 @@ last_safe_coords = [-1, -1];
 default_walk_speed = 3;
 walk_speed = default_walk_speed;
 //Life
-default_lives = 3;
+default_lives = 5;
 current_lives = default_lives;
 global.died = false;
 //Stamina
