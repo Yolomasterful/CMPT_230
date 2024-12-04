@@ -22,7 +22,6 @@
     {"name":"Decor","order":4,"path":"folders/Sprites/Floors/Jungle/Decor.yy",},
     {"name":"Interaction","order":10,"path":"folders/Sprites/Interaction.yy",},
     {"name":"Menu","order":12,"path":"folders/Sprites/Menu.yy",},
-    {"name":"Mummy","order":14,"path":"folders/Sprites/Mummy.yy",},
     {"name":"Player","order":11,"path":"folders/Sprites/Player.yy",},
     {"name":"UI","order":13,"path":"folders/Sprites/UI.yy",},
     {"name":"Desert","order":1,"path":"folders/Tile Sets/Desert.yy",},
